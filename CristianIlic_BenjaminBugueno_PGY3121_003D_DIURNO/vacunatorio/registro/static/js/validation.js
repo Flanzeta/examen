@@ -15,45 +15,45 @@ function validateForm() {
     mailvac = document.form.mail_vac.value
 
 
-    if (nombre.value().length<3)
-   {
-       alert("Nombre debe tener al menos 3 caracteres")
-       document.form.txt_nombre.focus()
-       e.preventDefault()
+    if (nombre.length < 3) {
+        alert("Nombre debe tener al menos 3 caracteres")
+        document.form.txt_nombre.focus()
 
-       
-   }
-   if (appaterno.value().length<3)
-   {
-       alert("Apellido paterno debe tener al menos 3 caracteres")
-       document.form.txt_appaterno.focus()
-       e.preventDefault()
-
-   }
-   if (apmaterno.value().length<3)
-   {
-       alert("Apellido materno debe tener al menos 3 caracteres")
-       document.form.txt_apmaterno.focus()
-       e.preventDefault()
-
-       
-   }
-
-   if (rut.value()<9 && rut.value()>10 && rut.value().indexOf('-')<0)
-   {
-       alert("El rut debe tener entre 9 y 10 caracteres, sin puntos y debe contener un guión")
-       document.form.txt_rut.focus()
-       e.preventDefault()
-
-   }
+        return false;
 
 
+    }
+    if (appaterno.length < 3) {
+        alert("Apellido paterno debe tener al menos 3 caracteres")
+        document.form.txt_appaterno.focus()
 
-document.form.action = "/ingreso_registro/"
-document.form.submit() = True
-alert("Formulario enviado")
+        return false;
 
 
-    
+    }
+    if (apmaterno.length < 3) {
+        alert("Apellido materno debe tener al menos 3 caracteres")
+        document.form.txt_apmaterno.focus()
+
+        return false;
+
+
+    }
+
+    if (rut < 9 && rut > 10 && rut.indexOf('-') < 0) {
+        alert("El rut debe tener entre 9 y 10 caracteres, sin puntos y debe contener un guión")
+        document.form.txt_rut.focus()
+
+        return false;
+
+
+    }
+
+
+
+    document.form.action = "/ingreso_registro/"
+    document.form.submit() = true
+    alert("Formulario enviado")
+
 }
 
