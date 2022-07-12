@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+  {% include "nav.html" %}   
+      <div> 
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre del establecimiento</th>
+              <th scope="col">Tipo de establecimiento</th>
+              <th scope="col">Direccion establecimiento</th>
+              <th scope="col">Telefono de contacto</th>
+              <th scope="col">Email de contacto</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% if Establecimiento %}
+              {% for e in Establecimiento %}
+              <tr>
+                  <td>{{e.nombreestablecimiento}}</td>
+                  <td>{{e.tipoestablecimiento}}</td>
+                  <td>{{e.direccion}}</td>
+                  <td>{{e.telefono}}</td>
+                  <td>{{e.email}}</td>
+              </tr>
+              {% endfor %}
+              {% else %}
+                  <h2>no existen registros de Establecimientos</h2>
+              {% endif %}
+      
+          </tbody>
+        
+          <div class="card" style="width: 18rem;">
+        
+      
+        </table>
+        <table class="table">
+        <div class="card-body">
+            <form action="/eliminarest/" method="GET" >
+                <div class="form-group mb-4">
+                  <label>Ingrese nombre de establecimiento</label>
+                  <input type="text" name="nombreestablecimiento" class="form-control mt-1" placeholder="Elimina un establecimiento por su nombre">
+                </div>
+                <button  type="submit" class="btn btn-danger">eliminar</button>
+              </form>
+        </div>
+      </table>
+
+      </div>
+</html>
