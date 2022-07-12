@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+  {% include "nav.html" %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">rut</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido materno</th>
+            <th scope="col">apellido paterno</th>
+            <th scope="col">edad</th>
+            <th scope="col">nombre vacuna</th>
+            <th scope="col">fecha</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+            {% if personas %}
+            {% for p in personas %}
+            <tr>
+                <td>{{p.rut}}</td>
+                <td>{{p.nombre}}</td>
+                <td>{{p.appaterno}}</td>
+                <td>{{p.apmaterno}}</td>
+                <td>{{p.edad}}</td>
+                <td>{{p.nomvacuna}}</td>
+                <td>{{p.fecha}}k</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+                <h2>no existen registros de personas</h2>
+            {% endif %}
+    
+        </tbody>
+      </table>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <form action="/eliminar/" method="GET" >
+                <div class="form-group mb-4">
+                  <label>rut</label>
+                  <input type="text" name="rut" class="form-control mt-1" placeholder="elimina una persona por rut">
+                </div>
+                <button  type="submit" class="btn btn-danger">eliminar</button>
+              </form>
+        </div>
+      
+
+      </div>
+</html>

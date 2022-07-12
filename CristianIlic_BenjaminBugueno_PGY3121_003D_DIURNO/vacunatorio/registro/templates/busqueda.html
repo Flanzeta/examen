@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+  {% include "nav.html" %}
+  <div style="height: 50vh;" class="container d-flex align-items-center">
+
+            {% if persona %}
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">rut</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">apellido paterno</th>
+                    <th scope="col">apellido materno</th>
+                    <th scope="col">edad</th>
+                    <th scope="col">nombre vacuna</th>
+                    <th scope="col">fecha</th>
+                  </tr>
+                </thead>
+                <tbody>
+            <tr>
+                <td>{{persona.rut}}</td>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.appaterno}}</td>
+                <td>{{persona.apmaterno}}</td>
+                <td>{{persona.edad}}</td>
+                <td>{{persona.nomvacuna}}</td>
+                <td>{{persona.fecha}}</td>
+            </tr>
+        </tbody>
+    </table>
+            {% else %}
+                <h2>no existe la persona que usted está buscando</h2>
+
+            {% endif %}
+    
+
+
+  </div>
+</body>
+
+</html>

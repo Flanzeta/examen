@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <header class="masthead bg-danger text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+
+            <img style="height: 50vh;" class="masthead-avatar mb-5" src="{% static 'img/health.svg' %}" alt="..." />
+
+            <h1 class="masthead-heading text-uppercase mb-0">Vacunatorio</h1>
+
+            <p class="masthead-subheading font-weight-light mb-0">Gestiona tu vacunatorio</p>
+        </div>
+    </header>
+    <div class="contenedor text-center mt-5">
+        <a href="/ingresar/" class="btn btn-primary mx-2 px-5 btn-lg" role="button" aria-disabled="true">ingresar</a>
+        <a href="/listar/" class="btn btn-primary mx-2 px-5 btn-lg" role="button" aria-disabled="true">listar</a>
+        <a href="/buscar/" class="btn btn-primary mx-2 px-5 btn-lg" role="button" aria-disabled="true">buscar</a>
+        <a href="/listarest/" class="btn btn-primary mx-2 px-5 btn-lg" role="button" aria-disabled="true">listar establecimientos</a>
+
+    </div>
+</body>
+</html>
